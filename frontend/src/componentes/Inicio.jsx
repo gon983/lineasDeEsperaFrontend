@@ -1,19 +1,18 @@
 import { useForm } from "react-hook-form";
 import { useNavigate} from "react-router-dom";
-import axios from "axios";
+
 
 
 function Inicio(){
     const navigate = useNavigate()
     const {register, handleSubmit, formState: {errors}} = useForm()
 
-    function verSimulacion(){
-        navigate('/simulacion')
+    function verSimulacion(param1,param2){
+        navigate(`/${param1}/${param2}`)
     }
     
     function onSubmit(data){
-        axios.post('http://localhost:8000/', data)
-        verSimulacion()
+        verSimulacion(data.param1, data.param2)
     }
 
 
