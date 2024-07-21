@@ -1,7 +1,16 @@
+import { Routes, Route } from "react-router-dom";
+import Inicio from './componentes/Inicio'
+import Simulacion from "./componentes/Simulacion";
+
 
 function App(){
     return (
-        <p> Funciono!</p>
+        <div className="container text-center">
+        <Routes>
+        <Route path='/' element={<Inicio></Inicio>} ></Route>
+        <Route path='/simulacion' element={<Simulacion></Simulacion>} ></Route>
+        </Routes>
+        </div>
     )
 }
 
