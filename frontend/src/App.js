@@ -8,7 +8,7 @@ function App(){
         <div className="container text-center">
         <Routes>
         <Route path='/' element={<Inicio></Inicio>} ></Route>
-        <Route path='/simulacion/:param1/:param2' element={<Simulacion></Simulacion>} ></Route>
+        <Route path='/simulacion/:cantidadLineasASimular/:duracionSimulacion/:lineaInicioVisualizacion/:lineaFinVisualizacion/:cantidadSurtidores/:cantidadEmpleadosGomeria/:cantidadEmpleadosVentaAccesorios/:llegadaClientesMedia/:llegadaClientesDesviacion/:aDuracionCargaCombustible/:bDuracionCargaCombustible/:aDuracionAtGomeria/:bDuracionAtGomeria/:aDuracionVentaAccesorios/:bDuracionVentaAccesorios' element={<Simulacion></Simulacion>} ></Route>
         </Routes>
         </div>
     )

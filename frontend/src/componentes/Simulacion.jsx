@@ -6,7 +6,7 @@ function Simulacion(){
     const {cantidadLineasASimular,duracionSimulacion, lineaInicioVisualizacion, lineaFinVisualizacion, cantidadSurtidores, cantidadEmpleadosGomeria, 
         cantidadEmpleadosVentaAccesorios, llegadaClientesMedia, llegadaClientesDesviacion, aDuracionCargaCombustible, bDuracionCargaCombustible,
         aDuracionAtGomeria, bDuracionAtGomeria, aDuracionVentaAccesorios, bDuracionVentaAccesorios} = useParams()
-    const [tabla, setTabla] = useState(0) 
+    const [tabla, setTabla] = useState(null) 
     
 
     async function getSimulacion(){
