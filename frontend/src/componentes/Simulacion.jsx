@@ -21,16 +21,21 @@ function Simulacion(){
 
     return (
         <>
-        {tabla ? (
-                <>
-                    <h1>Duración Simulación: {tabla.duracionSimulacion}</h1>
-                    <h2>Línea Inicio Simulación: {tabla.lineaInicioVisualizacion}</h2>
-                    <h3>Linea fin visualizacion: {tabla.lineaFinVisualizacion}</h3>
-                </>
-            ) : (
-                <h1>Cargando...</h1>
-            )
-        }
+        <table>
+                <tbody>
+                    {tabla && tabla.simulacion.map((element, index) => (
+                        <tr key={index}>
+                            {Array.isArray(element) ? (
+                                element.map((subElement, subIndex) => (
+                                    <td key={subIndex}>{subElement}</td>
+                                ))
+                            ) : (
+                                <td>{element}</td>
+                            )}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </>
     )
 }
