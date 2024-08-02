@@ -21,7 +21,7 @@ function Simulacion(){
 
     return (
         <>
-        <table>
+        <table className="table table-dark table-striped">
                 <tbody>
                     {tabla && tabla.simulacion.map((element, index) => (
                         <tr key={index}>
