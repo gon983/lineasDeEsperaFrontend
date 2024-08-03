@@ -21,21 +21,23 @@ function Simulacion(){
 
     return (
         <>
-        <table className="table table-dark table-striped">
-                <tbody>
-                    {tabla && tabla.simulacion.map((element, index) => (
-                        <tr key={index}>
-                            {Array.isArray(element) ? (
-                                element.map((subElement, subIndex) => (
-                                    <td key={subIndex}>{subElement}</td>
-                                ))
-                            ) : (
-                                <td>{element}</td>
-                            )}
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <table className="table table-dark table-striped">
+            <tbody>
+                {tabla && tabla.simulacion.map((outerArray, outerIndex) =>
+                outerArray.map((middleArray, middleIndex) =>
+                    middleArray.map((innerArray, innerIndex) => (
+                    <tr key={`${outerIndex}-${middleIndex}-${innerIndex}`}>
+                        {innerArray.map((item, itemIndex) => (
+                        <td key={itemIndex}>
+                            {Array.isArray(item) ? item.join(', ') : item === 999? '': item}
+                        </td>
+                        ))}
+                    </tr>
+                    ))
+                )
+                )}
+            </tbody>
+    </table>
         </>
     )
 }
