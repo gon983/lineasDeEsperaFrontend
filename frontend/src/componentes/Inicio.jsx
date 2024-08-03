@@ -29,14 +29,14 @@ function Inicio(){
         setValue("cantidadSurtidores", 3);
         setValue("cantidadEmpleadosGomeria", 2);
         setValue("cantidadEmpleadosVentaAccesorios", 1);
-        setValue("llegadaClientesMedia", 0.4);
-        setValue("llegadaClientesDesviacion", 0.38);
-        setValue("aDuracionCargaCombustible", 0.68);
-        setValue("bDuracionCargaCombustible", 0.92);
-        setValue("aDuracionAtGomeria", 2);
-        setValue("bDuracionAtGomeria", 6);
-        setValue("aDuracionVentaAccesorios", 3);
-        setValue("bDuracionVentaAccesorios", 7);
+        setValue("llegadaClientesMedia", 24);
+        setValue("llegadaClientesDesviacion", 23);
+        setValue("aDuracionCargaCombustible", 45);
+        setValue("bDuracionCargaCombustible", 55);
+        setValue("aDuracionAtGomeria", 600);
+        setValue("bDuracionAtGomeria", 1560);
+        setValue("aDuracionVentaAccesorios", 60);
+        setValue("bDuracionVentaAccesorios", 300);
     }
 
     useEffect(() => {
