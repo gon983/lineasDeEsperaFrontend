@@ -21,23 +21,32 @@ function Simulacion(){
 
     return (
         <>
+        <div>
+        {tabla.simulacion ? (
+        
             <table className="table table-dark table-striped">
-            <tbody>
-                {tabla && tabla.simulacion.map((outerArray, outerIndex) =>
-                outerArray.map((middleArray, middleIndex) =>
-                    middleArray.map((innerArray, innerIndex) => (
-                    <tr key={`${outerIndex}-${middleIndex}-${innerIndex}`}>
-                        {innerArray.map((item, itemIndex) => (
-                        <td key={itemIndex}>
-                            {item}
-                        </td>
-                        ))}
-                    </tr>
-                    ))
-                )
+                <tbody>
+                {tabla.simulacion.map((outerArray, outerIndex) =>
+                    outerArray.map((middleArray, middleIndex) =>
+                        middleArray.map((innerArray, innerIndex) => (
+                            <tr key={`${outerIndex}-${middleIndex}-${innerIndex}`}>
+                                {innerArray.map((item, itemIndex) => (
+                                    <td key={itemIndex}>
+                                        {item}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))
+                    )
                 )}
-            </tbody>
-    </table>
+                </tbody>
+            </table>
+            ) : (
+            
+            <h3>{tabla && tabla.colasMaximas}</h3>
+            )}
+        </div>
+            
         </>
     )
 }
