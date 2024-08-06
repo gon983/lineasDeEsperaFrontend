@@ -41,7 +41,7 @@ function Inicio(){
 
     useEffect(() => {
         setDefaultValues();
-    }, [setDefaultValues]);
+    }, []);
 
 
     return (
