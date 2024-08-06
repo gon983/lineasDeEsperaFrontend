@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
 import { useNavigate} from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect , useState} from "react";
 
 
 
 function Inicio(){
     const navigate = useNavigate()
     const {register, handleSubmit, formState: {errors}, setValue} = useForm()
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     function verSimulacion(cantidadLineasASimular,duracionSimulacion,lineaInicioVisualizacion, lineaFinVisualizacion, cantidadSurtidores, cantidadEmpleadosGomeria, 
         cantidadEmpleadosVentaAccesorios, llegadaClientesMedia, llegadaClientesDesviacion, aDuracionCargaCombustible, bDuracionCargaCombustible,
@@ -16,9 +17,11 @@ function Inicio(){
     }
     
     async function onSubmit(data){
+        setIsSubmitting(true)
         verSimulacion(data.cantidadLineasASimular,data.duracionSimulacion, data.lineaInicioVisualizacion, data.lineaFinVisualizacion, data.cantidadSurtidores, data.cantidadEmpleadosGomeria, 
             data.cantidadEmpleadosVentaAccesorios, data.llegadaClientesMedia, data.llegadaClientesDesviacion, data.aDuracionCargaCombustible, data.bDuracionCargaCombustible,
             data.aDuracionAtGomeria, data.bDuracionAtGomeria, data.aDuracionVentaAccesorios, data.bDuracionVentaAccesorios)
+        setIsSubmitting(false)
     }
 
     function setDefaultValues() {
@@ -50,7 +53,7 @@ function Inicio(){
         <div className="row mt-3">
             <h1>Simulacion Estacion de Servicio</h1>
             <div className="row mt-4 justify-content-center">
-            <button type="submit" className="btn btn-success col-1">Simular</button>
+            <button type="submit" className="btn btn-success col-1" disabled={isSubmitting}>Simular</button>
         </div>
         </div>
 
