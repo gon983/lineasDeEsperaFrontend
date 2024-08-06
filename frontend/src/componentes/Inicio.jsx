@@ -23,7 +23,7 @@ function Inicio(){
 
     function setDefaultValues() {
         setValue("cantidadLineasASimular", 10);
-        setValue("duracionSimulacion", 60);
+        setValue("duracionSimulacion", 1);
         setValue("lineaInicioVisualizacion", 1);
         setValue("lineaFinVisualizacion", 10);
         setValue("cantidadSurtidores", 3);
@@ -62,14 +62,14 @@ function Inicio(){
             </div>
         </div>
 
-        <div className="row mt-3">
+        {/* <div className="row mt-3">
             <label className="col-3 h5"> Duracion de la simulacion:</label>
             <div className="col-5">
             <input type="text" className="form-control col-3 text-start" {...register('duracionSimulacion', {required: 'duracionSimulacion es requerido', validate: (value) => { return !isNaN(value) || 'Debe ser numérico' }})}></input>
             {errors.duracionSimulacion && <span className="text-danger">{errors.duracionSimulacion.message}</span>}
             </div>
             
-        </div>
+        </div> */}
 
         <div className="row mt-3">
             <label className="col-3 h5"> Numero de linea de inicio de visualizacion:</label>
