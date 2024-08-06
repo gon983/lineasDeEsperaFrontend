@@ -29,7 +29,7 @@ function Simulacion(){
                     <tr key={`${outerIndex}-${middleIndex}-${innerIndex}`}>
                         {innerArray.map((item, itemIndex) => (
                         <td key={itemIndex}>
-                            {Array.isArray(item) ? item.join(', ') : item === 999? '': item}
+                            {item}
                         </td>
                         ))}
                     </tr>
