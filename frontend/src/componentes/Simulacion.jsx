@@ -22,7 +22,7 @@ function Simulacion(){
     return (
         <>
         <div>
-        {tabla.simulacion ? (
+        {tabla && tabla.simulacion ? (
         
             <table className="table table-dark table-striped">
                 <tbody>
