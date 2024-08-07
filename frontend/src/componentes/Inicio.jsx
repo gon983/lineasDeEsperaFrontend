@@ -62,7 +62,7 @@ function Inicio(){
             <div className="col-5">
             <input type="text" className="form-control col-3 text-start" {...register('cantidadLineasASimular', {required: 'El cantidadLineasASimular es requerido', validate: {
                 isNumeric: (value) => !isNaN(value) || 'Debe ser numérico',
-                maxValue: (value) => parseInt(value) <= 100000 || 'Debe ser igual o inferior a 10,000'
+                maxValue: (value) => parseInt(value) <= 100000 || 'Debe ser igual o inferior a 100,000'
             }})}></input>
             {errors.cantidadLineasASimular && <span className='text-danger'>{errors.cantidadLineasASimular.message}</span>}
             </div>
