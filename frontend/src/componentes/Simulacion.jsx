@@ -43,7 +43,7 @@ function Simulacion(){
             </table>
             ) : (
             
-            <h3>{tabla && tabla.colasMaximas}</h3>
+            <h3>{tabla && tabla.colaMaxima}</h3>
             )}
         </div>
             
