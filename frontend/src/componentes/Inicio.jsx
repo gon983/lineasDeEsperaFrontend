@@ -60,7 +60,10 @@ function Inicio(){
         <div className="row text-center mt-5">
             <label className="col-3 h5"> Cantidad de lineas a Simular: </label>
             <div className="col-5">
-            <input type="text" className="form-control col-3 text-start" {...register('cantidadLineasASimular', {required: 'El cantidadLineasASimular es requerido', validate: (value) => { return !isNaN(value) || 'Debe ser numérico' }})}></input>
+            <input type="text" className="form-control col-3 text-start" {...register('cantidadLineasASimular', {required: 'El cantidadLineasASimular es requerido', validate: {
+                isNumeric: (value) => !isNaN(value) || 'Debe ser numérico',
+                maxValue: (value) => parseInt(value) <= 100000 || 'Debe ser igual o inferior a 10,000'
+            }})}></input>
             {errors.cantidadLineasASimular && <span className='text-danger'>{errors.cantidadLineasASimular.message}</span>}
             </div>
         </div>
